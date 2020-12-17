@@ -10,21 +10,32 @@
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
 $arrow-right-name: 'arrow-right';
-$arrow-right-x: 0px;
+$arrow-right-x: 27px;
 $arrow-right-y: 0px;
-$arrow-right-offset-x: 0px;
+$arrow-right-offset-x: -27px;
 $arrow-right-offset-y: 0px;
 $arrow-right-width: 21px;
 $arrow-right-height: 13px;
-$arrow-right-total-width: 21px;
-$arrow-right-total-height: 13px;
+$arrow-right-total-width: 48px;
+$arrow-right-total-height: 43px;
 $arrow-right-image: '../images/sprite.png';
-$arrow-right: (0px, 0px, 0px, 0px, 21px, 13px, 21px, 13px, '../images/sprite.png', 'arrow-right', );
-$spritesheet-width: 21px;
-$spritesheet-height: 13px;
+$arrow-right: (27px, 0px, -27px, 0px, 21px, 13px, 48px, 43px, '../images/sprite.png', 'arrow-right', );
+$arrow-bottom-name: 'arrow-bottom';
+$arrow-bottom-x: 0px;
+$arrow-bottom-y: 0px;
+$arrow-bottom-offset-x: 0px;
+$arrow-bottom-offset-y: 0px;
+$arrow-bottom-width: 27px;
+$arrow-bottom-height: 43px;
+$arrow-bottom-total-width: 48px;
+$arrow-bottom-total-height: 43px;
+$arrow-bottom-image: '../images/sprite.png';
+$arrow-bottom: (0px, 0px, 0px, 0px, 27px, 43px, 48px, 43px, '../images/sprite.png', 'arrow-bottom', );
+$spritesheet-width: 48px;
+$spritesheet-height: 43px;
 $spritesheet-image: '../images/sprite.png';
-$spritesheet-sprites: ($arrow-right, );
-$spritesheet: (21px, 13px, '../images/sprite.png', $spritesheet-sprites, );
+$spritesheet-sprites: ($arrow-right, $arrow-bottom, );
+$spritesheet: (48px, 43px, '../images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //
