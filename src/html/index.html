@@ -3,12 +3,12 @@
 <%= _.template(require('../includes/head.html').default)(data) %>
 <body>
 <div class="wrapper">
-  <div class="homepage-main-section">
+  <section class="homepage-main-section">
     <div class="container">
       <%= _.template(require('../includes/header.html').default)(data) %>
       <h1 class="homepage-main-title">флористика с душой</h1>
       <div class="button-holder">
-        <button class="button see-works">смотреть работы</button>
+        <button class="button button-1 see-works">смотреть работы</button>
       </div>
       <div class="homepage-main-section__footer">
         <%= _.template(require('../includes/socials.html').default)(data) %>
@@ -22,7 +22,63 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
+  <section class="catalog-section">
+    <div class="catalog-section__container">
+      <h2 class="catalog-section__title">Каталог услуг</h2>
+      <div class="catalog-section__label">каталог услуг</div>
+      <div class="catalog">
+        <div class="catalog-item">
+          <div class="catalog-item__holder">
+            <div class="catalog-item__image">
+              <img src="../images/catalog-1.jpg" alt="alt">
+            </div>
+            <div class="catalog-item__order-number">0</div>
+            <div class="catalog-item__content-box">
+              <h3 class="catalog-item__title">букет невесты и свадебное оформление</h3>
+              <a href="#" class="button button-1 catalog-item__button">смотреть работы</a>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <div class="catalog-item__holder">
+            <div class="catalog-item__image">
+              <img src="../images/catalog-2.jpg" alt="alt">
+            </div>
+            <div class="catalog-item__order-number">0</div>
+            <div class="catalog-item__content-box">
+              <h3 class="catalog-item__title">букеты на торжества</h3>
+              <a href="#" class="button button-1 catalog-item__button">смотреть работы</a>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <div class="catalog-item__holder">
+            <div class="catalog-item__image">
+              <img src="../images/catalog-3.jpg" alt="alt">
+            </div>
+            <div class="catalog-item__order-number">0</div>
+            <div class="catalog-item__content-box">
+              <h3 class="catalog-item__title">композиции</h3>
+              <a href="#" class="button button-1 catalog-item__button">смотреть работы</a>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-item">
+          <div class="catalog-item__holder">
+            <div class="catalog-item__image">
+              <img src="../images/catalog-4.jpg" alt="alt">
+            </div>
+            <div class="catalog-item__order-number">0</div>
+            <div class="catalog-item__content-box">
+              <h3 class="catalog-item__title">оформление мероприятий</h3>
+              <a href="#" class="button button-1 catalog-item__button">смотреть работы</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 <%= _.template(require('../includes/js.html').default)(data) %>
 </body>

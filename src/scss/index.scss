@@ -38,6 +38,7 @@ svg{
   background-size: cover;
   min-height: 100vh;
   padding-bottom: 95px;
+  margin-bottom: 190px;
   &:after {
     position: absolute;
     content: '';
@@ -128,20 +129,26 @@ svg{
   display: flex;
   justify-content: center;
 }
-.button.see-works {
+.button {
+  display: inline-block;
   font-family: Forum, sans-serif;
   font-size: 12px;
   line-height: 13px;
   text-align: center;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  min-width: 200px;
   padding: 20px 20px 15px;
   color: $white;
-  background-color: rgba(0, 0, 0, .6);
-  border: 1px solid $white;
   cursor: pointer;
   outline: none;
+  text-decoration: none;
+}
+.button-1 {
+  background-color: rgba(0, 0, 0, .6);
+  border: 1px solid $white;
+}
+.button.see-works {
+  min-width: 200px;
 }
 .see-catalog-button {
   cursor: pointer;
@@ -182,4 +189,91 @@ svg{
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+}
+.catalog-section {
+  position: relative;
+  margin-bottom: 170px;
+  &__container {
+    position: relative;
+    max-width: 1520px;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+  }
+  &__title {
+    position: relative;
+    font-size: 30px;
+    line-height: 33px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 120px;
+    text-align: center;
+    &:after {
+      position: absolute;
+      content: '';
+      width: 85px;
+      height: 2px;
+      background: $white;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__label {
+    position: absolute;
+    font-size: 220px;
+    line-height: 243px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    width: 100vw;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .03;
+  }
+}
+.catalog {
+  position: relative;
+  display: flex;
+  margin: 0 -30px;
+  counter-reset: section;
+  &-item {
+    counter-increment: section;
+    padding: 0 30px;
+    width: 25%;
+    &__holder {
+      position: relative;
+    }
+    &__order-number {
+      position: absolute;
+      top: 35px;
+      left: 20px;
+      font-size: 20px;
+      line-height: 22px;
+      text-transform: uppercase;
+      &::after {
+        position: relative;
+        content: counters(section,".");
+      }
+    }
+    &__content-box {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      right: 20px;
+    }
+    &__title {
+      font-size: 16px;
+      line-height: 170%;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.9;
+      margin: 0;
+    }
+    &__button {
+      display: none;
+      margin-top: 20px;
+    }
+  }
 }
