@@ -1,59 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="stylesheet" href="./css/style.bundle.css" />
-  <title>Title</title>
-</head>
+<%= _.template(require('../includes/head.html').default)(data) %>
 <body>
 <div class="wrapper">
   <div class="homepage-main-section">
     <div class="container">
-      <header class="header">
-        <a href="/" class="logo-holder">
-          <img src="../images/floristry-logo.svg" alt="logo" class="logo">
-        </a>
-        <div class="menu-trigger">
-          <div class="burger-icon"></div>
-          <div class="menu__title">меню</div>
-        </div>
-      </header>
+      <%= _.template(require('../includes/header.html').default)(data) %>
       <h1 class="homepage-main-title">флористика с душой</h1>
       <div class="button-holder">
         <button class="button see-works">смотреть работы</button>
       </div>
       <div class="homepage-main-section__footer">
-        <ul class="socials">
-          <li class="socials__item">
-            <a href="#" class="socials__link">
-              <svg>
-                <use xlink:href="#inst"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a href="#" class="socials__link">
-              <svg>
-                <use xlink:href="#fb"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a href="#" class="socials__link">
-              <svg>
-                <use xlink:href="#whatsapp"></use>
-              </svg>
-            </a>
-          </li>
-          <li class="socials__item">
-            <a href="#" class="socials__link">
-              <svg>
-                <use xlink:href="#vk"></use>
-              </svg>
-            </a>
-          </li>
-        </ul>
+        <%= _.template(require('../includes/socials.html').default)(data) %>
         <div class="mouse-icon">
           <svg>
             <use xlink:href="#mouse"></use>

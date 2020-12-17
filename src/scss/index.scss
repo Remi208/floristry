@@ -68,8 +68,10 @@ svg{
 .logo-holder {
   display: block;
 }
-.logo{
+.logo-holder{
+  display: block;
   width: 137px;
+  height: 47px;
 }
 .menu-trigger {
   position: relative;
@@ -130,6 +132,7 @@ svg{
   cursor: pointer;
 }
 .see-catalog-button {
+  cursor: pointer;
   position: relative;
   padding-right: 50px;
   font-size: 20px;
