@@ -3,16 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <link rel="icon" type="image/png" sizes="16x16 32x32" href="./images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="./images/android-icon-192x192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-icon-180x180.png">
-  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/style.bundle.css" />
   <title>Title</title>
 </head>
 <body>
 <div class="wrapper">
-
+  <div class="homepage-main-section">
+    <div class="container">
+      <header class="header">
+        <a href="/" class="logo-holder">
+          <img src="../images/floristry-logo.svg" alt="logo" class="logo">
+        </a>
+        <div class="menu-trigger">
+          <div class="burger-icon"></div>
+          <div class="menu__title">меню</div>
+        </div>
+      </header>
+      <h1 class="homepage-main-title">флористика с душой</h1>
+      <div class="button-holder">
+        <button class="button see-works">смотреть работы</button>
+      </div>
+      <div class="homepage-main-section__footer">
+        <ul class="socials">
+          <li class="socials__item">
+            <a href="#" class="socials__link">
+              <svg>
+                <use xlink:href="#inst"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link">
+              <svg>
+                <use xlink:href="#fb"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link">
+              <svg>
+                <use xlink:href="#whatsapp"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="socials__item">
+            <a href="#" class="socials__link">
+              <svg>
+                <use xlink:href="#vk"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+        <div class="mouse-icon">
+          <svg>
+            <use xlink:href="#mouse"></use>
+          </svg>
+        </div>
+        <div class="see-catalog-button">смотреть каталог</div>
+      </div>
+    </div>
+  </div>
 </div>
 <%= _.template(require('../includes/js.html').default)(data) %>
 </body>
