@@ -46,6 +46,7 @@ const config = {
   devServer: {
     contentBase: './src',
     watchContentBase: true,
+    port: 3000,
   },
   module: {
     rules: [

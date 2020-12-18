@@ -33,6 +33,7 @@
       border: none;
       border-radius: 3px 0 0 0;
       cursor: pointer;
+      outline: none;
     }
     .helper-nav-wrapper {
       position: fixed;
