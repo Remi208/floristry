@@ -1,7 +1,6 @@
 (() => {
   const findFiles = (files) => {
     const filesList = files.keys();
-    console.log(filesList);
     if (filesList.length < 2) {
       return;
     }
