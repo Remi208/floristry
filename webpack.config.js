@@ -16,7 +16,6 @@ function generateHtmlPlugins(templateDir) {
   });
   return htmlFiles.map(item => {
     const parts = item.split('.');
-    console.log(item);
     const fileName = parts[0];
     const extension = parts[1];
     return new HtmlWebpackPlugin({

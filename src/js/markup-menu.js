@@ -1,6 +1,7 @@
 (() => {
-  function findFiles(files) {
+  const findFiles = (files) => {
     const filesList = files.keys();
+    console.log(filesList);
     if (filesList.length < 2) {
       return;
     }
@@ -59,8 +60,8 @@
       }
     }`;
     document.head.appendChild(style);
-    // eslint-disable-next-line array-callback-return
-    filesList.map((key) => {
+
+    filesList.forEach((key) => {
       nav.innerHTML += `<a href="${key}">${key}</a>`;
     });
     document.body.appendChild(wrapper);
@@ -72,7 +73,7 @@
     nav.style.display = display;
     button.innerHTML = btnText;
 
-    function toggleNav() {
+    const toggleNav = () => {
       if (flag) {
         nav.style.display = 'none';
         button.innerHTML = 'Open pages list';
@@ -82,14 +83,14 @@
       }
       flag = !flag;
       localStorage.setItem('flag', flag);
-    }
+    };
     document.addEventListener('keyup', (e) => {
       if (e.type === 'keyup' && e.ctrlKey && e.keyCode === 88) {
         toggleNav();
       }
     });
     button.addEventListener('click', toggleNav);
-  }
+  };
 
-  findFiles(require.context('../html', true, /\.html$/));
+  findFiles(require.context('../', false, /\.html$/));
 })();
