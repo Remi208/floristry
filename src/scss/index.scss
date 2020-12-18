@@ -55,6 +55,8 @@ svg{
     justify-content: space-between;
   }
   .button-holder {
+    display: flex;
+    justify-content: center;
     margin-bottom: 40px;
   }
   .socials {
@@ -125,10 +127,6 @@ svg{
   letter-spacing: 0.09em;
   text-transform: uppercase;
 }
-.button-holder {
-  display: flex;
-  justify-content: center;
-}
 .button {
   display: inline-block;
   font-family: Forum, sans-serif;
@@ -142,13 +140,20 @@ svg{
   cursor: pointer;
   outline: none;
   text-decoration: none;
+  border: none;
 }
 .button-1 {
   background-color: rgba(0, 0, 0, .6);
   border: 1px solid $white;
 }
+.button-2 {
+  background: $black;
+}
 .button.see-works {
   min-width: 200px;
+}
+.button.make-an-order {
+  min-width: 220px;
 }
 .see-catalog-button {
   cursor: pointer;
@@ -274,6 +279,91 @@ svg{
     &__button {
       display: none;
       margin-top: 20px;
+    }
+  }
+}
+.promotion-block {
+  margin-bottom: 170px;
+  &__container {
+    position: relative;
+    max-width: 1235px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+  &__info {
+    width: 100%;
+  }
+  &__image {
+    width: 700px;
+    min-width: 700px;
+    margin-left: 165px;
+    img {
+      width: 100%;
+    }
+  }
+  &__title {
+    position: relative;
+    font-size: 30px;
+    line-height: 170%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    &:after {
+      position: absolute;
+      content: '';
+      width: 85px;
+      height: 2px;
+      background: $white;
+      bottom: 0;
+      left: 0;
+    }
+  }
+  &__text {
+    margin-bottom: 45px;
+    font-size: 14px;
+    line-height: 170%;
+  }
+}
+.footer {
+  &__content {
+    padding: 20px 0 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  &-nav {
+    &__list {
+      list-style: none;
+      margin: 0 0 30px;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+    &__item {
+      margin-right: 50px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &__link {
+      font-size: 16px;
+      line-height: 18px;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+    }
+  }
+  .socials {
+    display: flex;
+    justify-content: center;
+    &__item {
+      margin-right: 50px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
