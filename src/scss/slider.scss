@@ -1,0 +1,45 @@
+.slick-next,
+.slick-prev {
+  width: 46px;
+  height: 46px;
+  border: 1px solid $white;
+  border-radius: 50%;
+  z-index: 1;
+  transition: .3s;
+  &:before {
+    position: absolute;
+    content: '';
+    display: block;
+    height: 6px;
+    width: 6px;
+    border: solid $white;
+    border-width: 0 1px 1px 0;
+    left: 50%;
+    top: 50%;
+  }
+}
+.slick-next {
+  top: 50%;
+  right: 20px;
+  transform: translate(50%, -50%);
+  &:before {
+    transform: translate(-50%, -50%) rotateZ(-45deg);
+  }
+}
+.slick-prev {
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  &:before {
+    transform: translate(-50%, -50%) rotateZ(135deg);
+  }
+}
+.slick-disabled {
+  opacity: 0;
+}
+.slick-slide {
+  line-height: 0;
+  img {
+    display: block;
+  }
+}

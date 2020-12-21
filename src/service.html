@@ -6,6 +6,41 @@
   <div class="container">
     <%= _.template(require('./includes/header.html').default)(data) %>
   </div>
+  <div class="service__wrapper">
+    <div class="service__image" style="background-image: url('./images/service.jpg');"></div>
+    <div class="service__content">
+      <h1 class="service__title">букеты невесты и свадебное оформление</h1>
+      <div class="service__text">Свадьба–самое важное событие в жизни молодожен.  Поэтому каждый из будущих супругов хочет, чтобы на торжестве все было идеально. Наша компания превзойдет ваши ожидания по красоте, качеству и лояльному ценнику. Обращаясь к нам, вы можете не переживать за оформление вашей свадьбы.</div>
+      <div class="button-holder">
+        <button class="button button-3 service__button">заказать</button>
+      </div>
+      <div class="service__slider">
+        <div class="slide">
+          <img src="./images/service-slide-1.jpg" height="123" width="123" alt="alt">
+        </div>
+        <div class="slide">
+          <img src="./images/service-slide-2.jpg" height="123" width="123" alt="alt">
+        </div>
+        <div class="slide">
+          <img src="./images/service-slide-3.jpg" height="123" width="123" alt="alt">
+        </div>
+        <div class="slide">
+          <img src="./images/service-slide-4.jpg" height="123" width="123" alt="alt">
+        </div>
+        <div class="slide">
+          <img src="./images/service-slide-1.jpg" height="123" width="123" alt="alt">
+        </div>
+      </div>
+      <div class="more-photos-button">
+        <div class="more-photos-button__text">Больше фотографий в профиле</div>
+        <div class="more-photos-button__icon">
+          <svg>
+            <use xlink:href="#inst"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <%= _.template(require('./includes/js.html').default)(data) %>
 </body>
