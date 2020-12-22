@@ -3,6 +3,7 @@ import './markup-menu';
 import $ from 'jquery';
 import 'slick-carousel';
 import svgLoader from './svg-loader';
+import menu from './menu';
 
 document.addEventListener('DOMContentLoaded', () => {
   svgLoader();
@@ -17,4 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
       centerPadding: '100px',
     });
   }
+
+  menu();
 });
