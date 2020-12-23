@@ -509,7 +509,7 @@ svg{
       width: 100%;
       margin: 0 auto;
       transition: .5s;
-      &:hover {
+      @include desktop-hover() {
         color: $white;
       }
     }
@@ -522,7 +522,7 @@ svg{
       margin-bottom: 25px;
       opacity: .5;
       transition: .5s;
-      &:hover {
+      @include desktop-hover() {
         opacity: 1;
       }
       &:last-child {

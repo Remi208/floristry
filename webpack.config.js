@@ -29,7 +29,10 @@ function generateHtmlPlugins(templateDir) {
 const htmlPlugins = generateHtmlPlugins('./src/');
 
 const config = {
-  entry: ['./src/js/index.js', './src/scss/index.scss'],
+  entry: [
+    './src/js/index.js',
+    './src/scss/index.scss'
+  ],
   output: {
     filename: './js/bundle.js',
   },
@@ -96,12 +99,17 @@ const config = {
       {
         test: /\.html$/,
         include: path.resolve(__dirname, 'src/includes'),
-        use: ['raw-loader'],
+        use: [
+          'raw-loader',
+        ],
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader', 'eslint-loader'],
+        use: [
+          'babel-loader',
+          'eslint-loader',
+        ],
       },
       {
         test: /\.png$/,
@@ -119,7 +127,10 @@ const config = {
     ],
   },
   resolve: {
-    modules: ['node_modules', 'scss'],
+    modules: [
+      'node_modules',
+      'scss',
+    ],
   },
   plugins: [
     new SpriteLoaderPlugin({

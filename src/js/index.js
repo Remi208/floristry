@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slider.slick({
       infinite: false,
       slidesToShow: 4,
-      slidesToScroll: 4,
-      centerPadding: '100px',
+      slidesToScroll: 1,
     });
   }
 
