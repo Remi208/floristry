@@ -5,7 +5,11 @@
   border: 1px solid $white;
   border-radius: 50%;
   z-index: 1;
-  transition: .3s;
+  transition: .5s;
+  background: rgba($black, .4);
+  @include desktop-hover() {
+    background: $black;
+  }
   &:before {
     position: absolute;
     content: '';

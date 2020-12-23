@@ -136,6 +136,11 @@ svg{
   outline: none;
   text-decoration: none;
   border: none;
+  transition: .5s;
+  @include desktop-hover() {
+    background: $white;
+    color: $black;
+  }
 }
 .button-1 {
   background-color: rgba($black, .6);
@@ -183,6 +188,10 @@ svg{
     display: block;
     width: 100%;
     height: 100%;
+    transition: .5s;
+    @include desktop-hover() {
+      opacity: .5;
+    }
   }
 }
 .mouse-icon {
@@ -248,6 +257,52 @@ svg{
     width: 25%;
     &__holder {
       position: relative;
+      z-index: 1;
+      &:before {
+        position: absolute;
+        content: '';
+        border: 1px solid rgba($white, .2);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        transition: .5s;
+      }
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($black, .6);
+        z-index: 1;
+        opacity: 0;
+        transition: .5s;
+      }
+      @include desktop-hover() {
+        &:before {
+          left: -10px;
+          right: -10px;
+          bottom: -10px;
+          top: -10px;
+        }
+        &:after {
+          opacity: 1;
+        }
+        .catalog-item__order-number {
+          padding-right: 0;
+          padding-left: 80px;
+          &:before {
+            right: calc(100% - 70px);
+            left: 0;
+          }
+        }
+        .catalog-item__button {
+          display: inline-block;
+        }
+      }
     }
     &__order-number {
       position: absolute;
@@ -256,7 +311,20 @@ svg{
       font-size: 20px;
       line-height: 22px;
       text-transform: uppercase;
-      &::after {
+      padding-right: 80px;
+      transition: .5s;
+      z-index: 2;
+      &:before {
+        position: absolute;
+        content: '';
+        right: 0;
+        left: calc(100% - 70px);
+        bottom: 5px;
+        height: 1px;
+        background: $white;
+        transition: .5s;
+      }
+      &:after {
         position: relative;
         content: counters(section,".");
       }
@@ -266,6 +334,7 @@ svg{
       left: 20px;
       bottom: 20px;
       right: 20px;
+      z-index: 2;
     }
     &__title {
       font-size: 16px;
@@ -278,6 +347,7 @@ svg{
     &__button {
       display: none;
       margin-top: 20px;
+      min-width: 200px;
     }
   }
 }
@@ -353,6 +423,10 @@ svg{
       line-height: 18px;
       color: rgba($white, 0.5);
       text-decoration: none;
+      transition: .5s;
+      @include desktop-hover() {
+        color: $white;
+      }
     }
   }
   .socials {
@@ -520,13 +594,14 @@ svg{
     left: 95px;
     &__item {
       margin-bottom: 25px;
-      opacity: .5;
-      transition: .5s;
-      @include desktop-hover() {
-        opacity: 1;
-      }
       &:last-child {
         margin-bottom: 0;
+      }
+    }
+    &__link {
+      opacity: .5;
+      @include desktop-hover() {
+        opacity: 1;
       }
     }
   }
