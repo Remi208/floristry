@@ -73,8 +73,8 @@ const config = {
             options: {
               ident: 'postcss',
               sourceMap: true,
-              plugins: () => [
-                // eslint-disable-next-line global-require
+              plugins: [
+                require('autoprefixer'),
                 require('cssnano')({
                   preset: [
                     'default',

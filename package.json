@@ -10,6 +10,10 @@
     "build-simple": "webpack --mode production && prettier --print-width=120 --parser html --write dist/*.html",
     "build": "npm run lint & npm run flow & npm run build-simple"
   },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
   "dependencies": {
     "jquery": "^3.5.1",
     "slick-carousel": "^1.8.1",
@@ -19,6 +23,7 @@
   "devDependencies": {
     "@babel/core": "^7.7.0",
     "@babel/preset-flow": "^7.0.0",
+    "autoprefixer": "^9.8.6",
     "babel": "^6.23.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
