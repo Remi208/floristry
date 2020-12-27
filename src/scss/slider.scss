@@ -23,17 +23,11 @@
   }
 }
 .slick-next {
-  top: 50%;
-  right: 20px;
-  transform: translate(50%, -50%);
   &:before {
     transform: translate(-50%, -50%) rotateZ(-45deg);
   }
 }
 .slick-prev {
-  top: 50%;
-  left: 0;
-  transform: translate(-50%, -50%);
   &:before {
     transform: translate(-50%, -50%) rotateZ(135deg);
   }
@@ -45,5 +39,32 @@
   line-height: 0;
   img {
     display: block;
+  }
+}
+.slick-dots {
+  bottom: 0;
+  line-height: 0;
+  li {
+    width: auto;
+    height: auto;
+    button {
+      padding: 0;
+      width: 62px;
+      height: 3px;
+      border-radius: 3px;
+      background: rgba($white, .3);
+      transition: .5s;
+      &:before {
+        color: transparent;
+      }
+    }
+    &.slick-active {
+      button {
+        background: $white;
+        &:before {
+          color: transparent;
+        }
+      }
+    }
   }
 }

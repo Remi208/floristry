@@ -4,7 +4,11 @@
 <body>
 <%= _.template(require('./includes/menu.html').default)(data) %>
 <div class="wrapper">
-  <section class="homepage-main-section">
+  <section
+      class="homepage-main-section"
+      style="background-image: url('./images/main-section-bg.jpg');"
+      data-bg-tablet="url('./images/main-section-tablet-bg.jpg')"
+  >
     <div class="container">
       <%= _.template(require('./includes/header.html').default)(data) %>
       <h1 class="homepage-main-title">флористика с душой</h1>

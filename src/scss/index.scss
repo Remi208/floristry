@@ -34,15 +34,20 @@ svg{
   padding: 0 10px;
   width: 100%;
   margin: 0 auto;
+  @include responsive($tablet) {
+    padding: 0 40px;
+  }
 }
 .homepage-main-section {
   position: relative;
-  background-image: url('../images/main-section-bg.jpg');
   background-position: center center;
   background-size: cover;
   min-height: 100vh;
   padding-bottom: 95px;
   margin-bottom: 190px;
+  @include responsive($tablet) {
+    margin-bottom: 100px;
+  }
   &:after {
     position: absolute;
     content: '';
@@ -51,23 +56,54 @@ svg{
     right: 0;
     height: 75px;
     background: linear-gradient(0deg, $main-theme-color 3.33%, rgba(59, 24, 30, 0) 100%);
+    @include responsive($tablet) {
+      opacity: 0;
+    }
   }
   &__footer {
     position: relative;
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
+    @include responsive($tablet) {
+      display: block;
+      text-align: center;
+    }
   }
   .button-holder {
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    @include responsive($tablet) {
+      margin-bottom: 210px;
+    }
   }
   .socials {
+    @include responsive($tablet) {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 35px;
+    }
     &__item {
       margin-bottom: 25px;
+      @include responsive($tablet) {
+        margin-bottom: 0;
+        margin-right: 80px;
+      }
       &:last-child {
         margin-bottom: 0;
+        @include responsive($tablet){
+          margin-right: 0;
+        }
+      }
+    }
+    &__link {
+      @include responsive($tablet) {
+        width: 56px;
+        height: 56px;
+        padding: 15px;
+        background: $main-theme-color;
+        border-radius: 50%;
       }
     }
   }
@@ -82,6 +118,12 @@ svg{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include responsive($tablet) {
+    left: 40px;
+    right: 40px;
+    padding-top: 40px;
+    align-items: flex-start;
+  }
 }
 .logo-holder {
   display: block;
@@ -94,7 +136,12 @@ svg{
 .burger-icon {
   position: relative;
   width: 23px;
+  height: 10px;
   margin-right: 15px;
+  @include responsive($tablet) {
+    width: 35px;
+    margin: 0;
+  }
   &:before,
   &:after {
     position: absolute;
@@ -106,9 +153,13 @@ svg{
   }
   &:before {
     bottom: 5px;
+    @include responsive($tablet) {
+      bottom: 0;
+    }
   }
   &:after {
-    bottom: 11px;
+    bottom: auto;
+    top: 0;
   }
 }
 .homepage-main-title {
@@ -121,6 +172,11 @@ svg{
   text-align: center;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+  @include responsive($tablet) {
+    font-size: 70px;
+    line-height: 77px;
+    padding-top: 330px;
+  }
 }
 .button {
   display: inline-block;
@@ -141,6 +197,11 @@ svg{
     background: $white;
     color: $black;
   }
+  @include responsive($tablet) {
+    padding: 20px;
+    font-size: 15px;
+    line-height: 17px;
+  }
 }
 .button-1 {
   background-color: rgba($black, .6);
@@ -155,8 +216,11 @@ svg{
 }
 .button.see-works {
   min-width: 200px;
+  @include responsive($tablet) {
+    min-width: 250px;
+  }
 }
-.button.make-an-order {
+.make-an-order {
   min-width: 220px;
 }
 .see-catalog-button {
@@ -167,6 +231,13 @@ svg{
   line-height: 22px;
   letter-spacing: 0.06em;
   transform: translateX(50%) rotateZ(90deg) translateX(-50%) translateY(50%);
+  @include responsive($tablet) {
+    transform: none;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    padding: 0;
+  }
   &:after {
     position: absolute;
     content: '';
@@ -174,20 +245,26 @@ svg{
     top: 50%;
     transform: translateY(-50%);
     @include sprite($arrow-right);
+    @include responsive($tablet) {
+      @include sprite($arrow-bottom);
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__text {
+    @include responsive($tablet) {
+      display: none;
+    }
   }
 }
 .socials{
   list-style: none;
   padding: 0;
   margin: 0;
-  &__item {
-    width: 25px;
-    height: 25px;
-  }
   &__link {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 25px;
+    height: 25px;
     transition: .5s;
     @include desktop-hover() {
       opacity: .5;
@@ -202,10 +279,16 @@ svg{
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
+  @include responsive($tablet) {
+    display: none;
+  }
 }
 .catalog-section {
   position: relative;
   margin-bottom: 170px;
+  @include responsive($tablet) {
+    margin-bottom: 100px;
+  }
   &__container {
     position: relative;
     max-width: 1520px;
@@ -219,15 +302,19 @@ svg{
     line-height: 33px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
+    padding-bottom: 20px;
     text-align: center;
+    @include responsive($tablet) {
+      margin-bottom: 30px;
+    }
     &:after {
       position: absolute;
       content: '';
       width: 85px;
       height: 2px;
       background: $white;
-      bottom: -22px;
+      bottom: 0;
       left: 50%;
       transform: translateX(-50%);
     }
@@ -244,6 +331,9 @@ svg{
     left: 50%;
     transform: translateX(-50%);
     opacity: .03;
+    @include responsive($tablet) {
+      display: none;
+    }
   }
 }
 .catalog {
@@ -251,6 +341,11 @@ svg{
   display: flex;
   margin: 0 -30px;
   counter-reset: section;
+  @include responsive($tablet) {
+    display: block;
+    margin: 0;
+    padding-bottom: 30px;
+  }
   &-item {
     counter-increment: section;
     padding: 0 30px;
@@ -353,6 +448,9 @@ svg{
 }
 .promotion-block {
   margin-bottom: 170px;
+  @include responsive($tablet) {
+    margin-bottom: 100px;
+  }
   &__container {
     position: relative;
     max-width: 1235px;
@@ -363,14 +461,27 @@ svg{
   &__content {
     display: flex;
     align-items: center;
+    @include responsive($tablet) {
+      flex-wrap: wrap;
+    }
   }
   &__info {
     width: 100%;
+    @include responsive($tablet) {
+      order: 2;
+    }
   }
   &__image {
     width: 700px;
     min-width: 700px;
     margin-left: 165px;
+    @include responsive($tablet) {
+      order: 1;
+      width: 100%;
+      margin: 0 auto 30px;
+      min-width: 0;
+      max-width: 450px;
+    }
     img {
       width: 100%;
     }
@@ -383,6 +494,10 @@ svg{
     text-transform: uppercase;
     padding-bottom: 15px;
     margin-bottom: 25px;
+    @include responsive($tablet) {
+      text-align: center;
+      margin-bottom: 40px;
+    }
     &:after {
       position: absolute;
       content: '';
@@ -391,18 +506,48 @@ svg{
       background: $white;
       bottom: 0;
       left: 0;
+      @include responsive($tablet) {
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
   &__text {
     margin-bottom: 45px;
     font-size: 14px;
     line-height: 170%;
+    @include responsive($tablet) {
+      max-width: 450px;
+      width: 100%;
+      margin: 0 auto 15px;
+      text-align: center;
+    }
+  }
+  .button-holder {
+    @include responsive($tablet) {
+      text-align: center;
+    }
+  }
+  .button {
+    @include responsive($tablet) {
+      font-size: 11px;
+      line-height: 12px;
+      letter-spacing: 0.15em;
+    }
   }
 }
 .footer {
+  .container {
+    @include responsive($tablet) {
+      padding: 0 20px;
+    }
+  }
   &__content {
     padding: 20px 0 30px;
     border-top: 1px solid rgba($white, 0.2);
+    @include responsive($tablet) {
+      padding: 40px 0;
+    }
   }
   &-nav {
     &__list {
@@ -411,11 +556,19 @@ svg{
       padding: 0;
       display: flex;
       justify-content: center;
+      @include responsive($tablet) {
+        display: block;
+        margin-bottom: 40px;
+      }
     }
     &__item {
       margin-right: 50px;
+      @include responsive($tablet) {
+        margin: 0 0 20px;
+        text-align: center;
+      }
       &:last-child {
-        margin-right: 0;
+        margin: 0;
       }
     }
     &__link {
@@ -426,6 +579,10 @@ svg{
       transition: .5s;
       @include desktop-hover() {
         color: $white;
+      }
+      @include responsive($tablet) {
+        font-size: 20px;
+        line-height: 22px;
       }
     }
   }
@@ -472,6 +629,9 @@ svg{
   &__content {
     width: 50%;
     padding-left: 115px;
+    @include responsive($laptop) {
+      padding-left: 40px;
+    }
   }
   &__title {
     font-size: 50px;
@@ -490,6 +650,16 @@ svg{
   &__slider {
     width: 572px;
     margin-bottom: 100px;
+    .slick-next {
+      top: 50%;
+      right: 20px;
+      transform: translate(50%, -50%);
+    }
+    .slick-prev {
+      top: 50%;
+      left: 0;
+      transform: translate(-50%, -50%);
+    }
   }
 }
 .more-photos-button {
@@ -516,8 +686,16 @@ svg{
   background: $main-theme-color;
   transition: .5s;
   padding: 95px 130px 20px;
+  @include responsive($tablet) {
+    padding: 110px 10px 10px;
+  }
   &.active {
     left: 0;
+  }
+  &__title {
+    @include responsive($tablet) {
+      display: none;
+    }
   }
   &-trigger {
     display: flex;
@@ -536,6 +714,13 @@ svg{
     width: 38px;
     height: 38px;
     cursor: pointer;
+    @include responsive($laptop){
+      right: 10px;
+    }
+    @include responsive($tablet) {
+      right: 40px;
+      top: 40px;
+    }
     &:before,
     &:after {
       position: absolute;
@@ -565,6 +750,9 @@ svg{
     list-style: none;
     &__item {
       margin-bottom: 75px;
+      @include responsive($tablet) {
+        margin-bottom: 60px;
+      }
       &:last-child {
         margin-bottom: 0;
       }
@@ -586,12 +774,22 @@ svg{
       @include desktop-hover() {
         color: $white;
       }
+      @include responsive($tablet) {
+        font-size: 30px;
+        line-height: 33px;
+      }
     }
   }
   .socials {
     position: absolute;
     bottom: 95px;
     left: 95px;
+    @include responsive($laptop) {
+      left: 10px;
+    }
+    @include responsive($tablet) {
+      display: none;
+    }
     &__item {
       margin-bottom: 25px;
       &:last-child {
