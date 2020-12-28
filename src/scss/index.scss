@@ -6,6 +6,7 @@
 @import '~slick-carousel/slick/slick';
 @import '~slick-carousel/slick/slick-theme';
 @import "slider";
+@import "popup";
 
 @font-face {
   font-family: Forum;
@@ -28,6 +29,10 @@ svg{
   background: $main-theme-color;
   color: $white;
   &.menu-opened {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
   }
@@ -40,6 +45,9 @@ svg{
   margin: 0 auto;
   @include responsive($tablet) {
     padding: 0 40px;
+  }
+  @include responsive($mobile) {
+    padding: 0 15px;
   }
 }
 .homepage-main-section {
@@ -71,6 +79,10 @@ svg{
       left: 40px;
       right: 40px;
     }
+    @include responsive($mobile) {
+      left: 30px;
+      right: 30px;
+    }
   }
   &__footer {
     position: relative;
@@ -89,6 +101,9 @@ svg{
     @include responsive($tablet) {
       margin-bottom: 210px;
     }
+    @include responsive($mobile) {
+      margin-bottom: 70px;
+    }
   }
   .socials {
     @include responsive($tablet) {
@@ -101,6 +116,9 @@ svg{
       @include responsive($tablet) {
         margin-bottom: 0;
         margin-right: 80px;
+      }
+      @include responsive($mobile) {
+        margin-right: 40px;
       }
       &:last-child {
         margin-bottom: 0;
@@ -116,6 +134,11 @@ svg{
         padding: 15px;
         background: $main-theme-color;
         border-radius: 50%;
+      }
+      @include responsive($mobile) {
+        width: 35px;
+        height: 35px;
+        padding: 9px;
       }
     }
   }
@@ -137,6 +160,10 @@ svg{
     right: 0;
     align-items: flex-start;
   }
+  @include responsive($mobile) {
+    padding: 15px 0 20px;
+    align-items: center;
+  }
 }
 .logo-holder {
   display: block;
@@ -145,6 +172,10 @@ svg{
   display: block;
   width: 137px;
   height: 47px;
+  @include responsive($mobile) {
+    width: 83px;
+    height: 28px;
+  }
 }
 .burger-icon {
   position: relative;
@@ -190,6 +221,12 @@ svg{
     line-height: 77px;
     padding-top: 330px;
   }
+  @include responsive($mobile) {
+    padding-top: 165px;
+    font-size: 30px;
+    line-height: 140%;
+    margin-bottom: 35px;
+  }
 }
 .button {
   display: inline-block;
@@ -215,6 +252,35 @@ svg{
     font-size: 15px;
     line-height: 17px;
   }
+  @include responsive($mobile) {
+    padding: 20px 20px 15px;
+    font-size: 10px;
+    line-height: 11px;
+  }
+}
+.input-field {
+  font-family: Forum, sans-serif;
+  border: 1px solid rgba($white, .2);
+  background: transparent;
+  outline: none;
+  color: $white;
+  font-size: 14px;
+  line-height: 15px;
+  letter-spacing: -0.01em;
+  padding: 13px 20px;
+  @include responsive($tablet) {
+    font-size: 20px;
+    line-height: 22px;
+    padding: 20px 30px;
+  }
+  @include responsive($mobile) {
+    font-size: 14px;
+    line-height: 15px;
+    padding: 13px 20px;
+  }
+  &::placeholder {
+    color: $white;
+  }
 }
 .button-1 {
   background-color: rgba($black, .6);
@@ -227,10 +293,17 @@ svg{
   border: 1px solid $white;
   background: transparent;
 }
-.button.see-works {
+.button-4 {
+  background: $white;
+  color: $black;
+}
+.see-works {
   min-width: 200px;
   @include responsive($tablet) {
     min-width: 250px;
+  }
+  @include responsive($mobile) {
+    min-width: 175px;
   }
 }
 .make-an-order {
@@ -251,6 +324,10 @@ svg{
     height: 45px;
     padding: 0;
   }
+  @include responsive($mobile) {
+    height: 21px;
+    width: 21px;
+  }
   &:after {
     position: absolute;
     content: '';
@@ -262,6 +339,9 @@ svg{
       @include sprite($arrow-bottom);
       left: 50%;
       transform: translate(-50%, -50%);
+    }
+    @include responsive($mobile) {
+      @include sprite($arrow-bottom-small);
     }
   }
   &__text {
@@ -308,6 +388,9 @@ svg{
     width: 100%;
     padding: 0 10px;
     margin: 0 auto;
+    @include responsive($mobile) {
+      padding: 0 15px;
+    }
   }
   &__title {
     position: relative;
@@ -315,11 +398,18 @@ svg{
     line-height: 33px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    margin-bottom: 100px;
+    margin: 0 0 100px;
     padding-bottom: 20px;
     text-align: center;
     @include responsive($tablet) {
       margin-bottom: 30px;
+    }
+    @include responsive($mobile) {
+      font-size: 20px;
+      line-height: 170%;
+      margin-bottom: 20px;
+      padding: 0;
+      text-align: left;
     }
     &:after {
       position: absolute;
@@ -330,6 +420,9 @@ svg{
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
+      @include responsive($mobile) {
+        display: none;
+      }
     }
   }
   &__label {
@@ -359,10 +452,16 @@ svg{
     margin: 0;
     padding-bottom: 30px;
   }
+  @include responsive($mobile) {
+    padding-bottom: 20px;
+  }
   &-item {
     counter-increment: section;
     padding: 0 30px;
     width: 25%;
+    @include responsive($mobile) {
+      padding: 0;
+    }
     &__holder {
       position: relative;
       z-index: 1;
@@ -478,6 +577,9 @@ svg{
     width: 100%;
     margin: 0 auto;
     padding: 0 10px;
+    @include responsive($mobile) {
+      padding: 0 15px;
+    }
   }
   &__content {
     display: flex;
@@ -519,6 +621,10 @@ svg{
       text-align: center;
       margin-bottom: 40px;
     }
+    @include responsive($mobile) {
+      font-size: 20px;
+      text-align: left;
+    }
     &:after {
       position: absolute;
       content: '';
@@ -530,6 +636,10 @@ svg{
       @include responsive($tablet) {
         left: 50%;
         transform: translateX(-50%);
+      }
+      @include responsive($mobile) {
+        left: 0;
+        transform: none;
       }
     }
   }
@@ -627,11 +737,21 @@ svg{
     }
     .button-holder {
       margin-bottom: 100px;
+      @include responsive($tablet) {
+        margin-bottom: 70px;
+      }
+      @include responsive($tablet) {
+        margin-bottom: 50px;
+      }
     }
     .more-photos-button {
       position: relative;
       float: right;
       margin-right: 95px;
+      @include responsive($mobile) {
+        float: none;
+        margin: 0;
+      }
     }
   }
   &__image {
@@ -644,6 +764,9 @@ svg{
       width: 100%;
       height: 520px;
       margin-bottom: 30px;
+    }
+    @include responsive($mobile) {
+      height: 445px;
     }
     &:after {
       position: absolute;
@@ -666,9 +789,10 @@ svg{
     }
     @include responsive($tablet) {
       width: 100%;
-      display: flex;
-      flex-direction: column;
       padding: 0 40px 40px;
+    }
+    @include responsive($mobile) {
+      padding: 0 15px 20px;
     }
   }
   &__title {
@@ -684,6 +808,10 @@ svg{
       line-height: 44px;
       margin-bottom: 30px;
     }
+    @include responsive($mobile) {
+      font-size: 20px;
+      line-height: 22px;
+    }
   }
   &__text {
     font-size: 18px;
@@ -694,29 +822,53 @@ svg{
       font-size: 20px;
       line-height: 120%;
     }
+    @include responsive($mobile) {
+      font-size: 18px;
+    }
   }
   &__slider {
     width: 572px;
     margin-bottom: 100px;
     @include responsive($tablet) {
-      order: -1;
-      margin: 0 auto 70px;
+      margin: 0 auto 100px;
+    }
+    @include responsive($mobile) {
+      width: 100%;
+      margin-bottom: 35px;
     }
     .slick-next {
       top: 50%;
       right: 20px;
       transform: translate(50%, -50%);
+      @include responsive($mobile) {
+        right: 0;
+        transform: translateY(-50%);
+      }
     }
     .slick-prev {
       top: 50%;
       left: 0;
       transform: translate(-50%, -50%);
+      @include responsive($mobile) {
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+    .slick-slide {
+      img {
+        @include responsive($mobile) {
+          margin: 0 auto;
+        }
+      }
     }
   }
   &__button {
     min-width: 135px;
     @include responsive($tablet) {
       min-width: 170px;
+    }
+    @include responsive($mobile) {
+      max-width: 120px;
     }
   }
 }
@@ -735,6 +887,7 @@ svg{
   }
 }
 .menu {
+  font-family: Forum, sans-serif;
   position: fixed;
   z-index: 2;
   width: 100vw;
@@ -747,6 +900,9 @@ svg{
   overflow-y: auto;
   @include responsive($tablet) {
     padding: 110px 10px 50px;
+  }
+  @include responsive($mobile) {
+    padding: 25px 50px;
   }
   &.active {
     left: 0;
@@ -773,12 +929,18 @@ svg{
     width: 38px;
     height: 38px;
     cursor: pointer;
-    @include responsive($laptop){
+    @include responsive($laptop) {
       right: 10px;
     }
     @include responsive($tablet) {
       right: 40px;
       top: 40px;
+    }
+    @include responsive($mobile) {
+      width: 30px;
+      height: 30px;
+      right: 25px;
+      top: 25px;
     }
     &:before,
     &:after {
@@ -802,6 +964,11 @@ svg{
     width: 158px;
     height: 49px;
     margin: 0 auto 200px;
+    @include responsive($mobile) {
+      width: 83px;
+      height: 28px;
+      margin-bottom: 75px;
+    }
   }
   &-list {
     margin: 0;
@@ -811,6 +978,9 @@ svg{
       margin-bottom: 75px;
       @include responsive($tablet) {
         margin-bottom: 60px;
+      }
+      @include responsive($mobile) {
+        margin-bottom: 50px;
       }
       &:last-child {
         margin-bottom: 0;
@@ -836,6 +1006,11 @@ svg{
       @include responsive($tablet) {
         font-size: 30px;
         line-height: 33px;
+      }
+      @include responsive($mobile) {
+        font-size: 15px;
+        line-height: 17px;
+        max-width: 145px;
       }
     }
   }

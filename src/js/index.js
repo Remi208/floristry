@@ -1,9 +1,11 @@
 // @flow
 import './markup-menu';
 import $ from 'jquery';
+import 'jquery.maskedinput/src/jquery.maskedinput';
 import 'slick-carousel';
 import svgLoader from './svg-loader';
 import menu from './menu';
+import contactUsPopup from './contact-us-popup';
 import { TABLET_DEVICE_WIDTH } from './constants';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -18,6 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
       infinite: false,
       slidesToShow: 4,
       slidesToScroll: 1,
+      responsive: [
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+      ],
     });
   }
 
@@ -34,9 +44,20 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesToScroll: 2,
         arrows: false,
         dots: true,
+        responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
       });
     }
   }
 
+  $("input[type='tel']").mask("+38 (999) 999-99-99");
   menu();
+  contactUsPopup();
 });

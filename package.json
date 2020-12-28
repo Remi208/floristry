@@ -1,8 +1,8 @@
 {
-  "name": "markup-bundler",
-  "version": "2.0.0",
+  "name": "floristry",
+  "version": "2.1.0",
   "description": "HTML template",
-  "main": "src/index.js",
+  "main": "src/index.html",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
     "lint": "eslint --ext .jsx --ext .js src/ --fix",
@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "jquery": "^3.5.1",
+    "jquery.maskedinput": "^1.4.1",
     "slick-carousel": "^1.8.1",
     "svg4everybody": "^2.1.9",
     "webpack-spritesmith": "^1.1.0"
