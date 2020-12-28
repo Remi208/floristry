@@ -317,6 +317,8 @@ svg{
   line-height: 22px;
   letter-spacing: 0.06em;
   transform: translateX(50%) rotateZ(90deg) translateX(-50%) translateY(50%);
+  color: $white;
+  text-decoration: none;
   @include responsive($tablet) {
     transform: none;
     display: inline-block;
