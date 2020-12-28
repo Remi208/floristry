@@ -10,11 +10,11 @@ const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 function generateHtmlPlugins(templateDir) {
   const templateFiles = fs.readdirSync(path.resolve(__dirname, templateDir));
-  const htmlFiles = templateFiles.filter(item => {
+  const htmlFiles = templateFiles.filter((item) => {
     const parts = item.split('.');
     return parts[1] === 'html';
   });
-  return htmlFiles.map(item => {
+  return htmlFiles.map((item) => {
     const parts = item.split('.');
     const fileName = parts[0];
     const extension = parts[1];
@@ -31,7 +31,7 @@ const htmlPlugins = generateHtmlPlugins('./src/');
 const config = {
   entry: [
     './src/js/index.js',
-    './src/scss/index.scss'
+    './src/scss/index.scss',
   ],
   output: {
     filename: './js/bundle.js',
