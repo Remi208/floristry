@@ -3,11 +3,11 @@ import $ from 'jquery';
 
 export default () => {
   const trigger = $('.menu-trigger, .menu-close');
-  const wrapper = $('.wrapper');
+  const body = $('body');
   const menu = $('.menu');
 
   trigger.on('click', () => {
     menu.toggleClass('active');
-    wrapper.toggleClass('menu-opened');
+    body.toggleClass('no-scroll');
   });
 };
